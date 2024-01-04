@@ -20,8 +20,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-//Magasin
 
+
+
+//Magasin
 Route::get('/magasin', [MagasinController::class, 'index'])->name('magasins.index');
 Route::get('/magasin/create', [MagasinController::class, 'create'])->name('magasins.create');
 Route::post('/magasin', [MagasinController::class, 'store'])->name('magasins.store');
+Route::delete('/magasin/{id}', [MagasinController::class, 'destroy'])->name('magasin.destroy');

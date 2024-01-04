@@ -20,7 +20,7 @@ class MagasinController extends Controller
         return view('create');
     }
 
-    //Ajouter
+    //Enregistrer
     public function store(Request $request)
     {
         $magasin = new Magasin();
@@ -31,5 +31,14 @@ class MagasinController extends Controller
         $magasin->save();
 
         return redirect('/magasin');
+    }
+
+    //Supprimer
+    public function destroy($id)
+    {
+        $magasin = Magasin::findOrFail($id);
+        $magasin->delete();
+
+        return redirect('/magasin')->with('success', 'Magasin supprimé avec succès');
     }
 }
