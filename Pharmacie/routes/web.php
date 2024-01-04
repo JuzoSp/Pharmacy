@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MagasinController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+//Magasin
+
+Route::get('/magasin', [MagasinController::class, 'index'])->name('magasins.index');
+Route::get('/magasin/create', [MagasinController::class, 'create'])->name('magasins.create');
+Route::post('/magasin', [MagasinController::class, 'store'])->name('magasins.store');
