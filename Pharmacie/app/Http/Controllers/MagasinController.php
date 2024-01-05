@@ -11,13 +11,13 @@ class MagasinController extends Controller
     public function index()
     {
         $magasins = Magasin::all();
-        return view('index', ['magasins' => $magasins]);
+        return view('Magasin.index', ['magasins' => $magasins]);
     }
 
     //Créer
     public function create()
     {
-        return view('create');
+        return view('Magasin.create');
     }
 
     //Enregistrer

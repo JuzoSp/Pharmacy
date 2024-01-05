@@ -14,7 +14,6 @@ class CreateDepotsTable extends Migration
             $table->string('adresse_depot');
             $table->unsignedBigInteger('magasin_id');
             $table->foreign('magasin_id')->references('id')->on('magasins');
-            // Add other columns as needed
             $table->timestamps();
         });
     }

@@ -13,8 +13,6 @@ class CreateStocksTable extends Migration
             $table->integer('quantite');
             $table->unsignedBigInteger('depot_id');
             $table->unsignedBigInteger('produit_id');
-            // Ajoutez d'autres colonnes au besoin
-
             $table->foreign('depot_id')->references('id')->on('depots');
             $table->foreign('produit_id')->references('id')->on('produits');
 

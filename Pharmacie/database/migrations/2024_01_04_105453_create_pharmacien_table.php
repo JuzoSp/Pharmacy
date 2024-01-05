@@ -14,7 +14,7 @@ class CreatePharmacienTable extends Migration
             $table->string('prenom');
             $table->string('email')->unique();
             $table->string('mot_de_passe');
-            // Add other columns as needed
+            $table->boolean('is_super_admin')->default(false);
             $table->timestamps();
         });
     }

@@ -5,19 +5,17 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 
-class CreateEmployesTable extends Migration
+class CreateMagasinTable extends Migration
 {
+
     public function up()
     {
-        Schema::create('employes', function (Blueprint $table) {
+        Schema::create('magasins', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('prenom');
             $table->string('adresse');
-            $table->string('telephone');
-            $table->string('poste');
-            $table->unsignedBigInteger('magasin_id');
-            $table->foreign('magasin_id')->references('id')->on('magasins');
+            $table->string('ville');
+            $table->string('code_postal');
             // Add other columns as needed
             $table->timestamps();
         });
@@ -25,6 +23,6 @@ class CreateEmployesTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('employes');
+        Schema::dropIfExists('magasins');
     }
 };

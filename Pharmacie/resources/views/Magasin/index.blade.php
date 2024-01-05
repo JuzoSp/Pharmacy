@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <h1>List of Magasins</h1>
+    <h1>Liste des Magasins</h1>
     @if (session('success'))
         <div class="flex bg-green-100 rounded-lg p-4 mb-4 text-sm text-green-600 font-medium">
             {{ session('success') }}
