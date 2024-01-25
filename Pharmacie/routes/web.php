@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\MagasinController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SuperAdminController;
@@ -27,6 +28,15 @@ Route::middleware(['auth', 'superadmin'])->group(function () {
     // Ajoutez d'autres routes pour les fonctionnalités du super administrateur
 });
 
+// Account
+Route::controller(AccountController::class)->group(function () {
+    Route::get('/', 'welcome')->name('welcome');
+    Route::get('login', 'login')->name('login');
+
+    //Registration
+    Route::get('register', 'register')->name('register.customer');
+    Route::post('register', 'store')->name('register.customer.store');
+});
 
 
 //Magasin

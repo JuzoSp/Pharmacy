@@ -30,7 +30,7 @@ class MagasinController extends Controller
         $magasin->code_postal = $request->input('code_postal');
         $magasin->save();
 
-        return redirect('/magasin');
+        return redirect('/magasin')->with('success', 'Magasin ajouté avec succès');
     }
 
     //Supprimer
