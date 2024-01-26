@@ -22,6 +22,11 @@ use App\Http\Controllers\ProduitController;
 //     return view('welcome');
 // });
 
+
+//Registration
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'Auth\RegisterController@register');
+
 //SuperAdmin
 Route::middleware(['auth', 'superadmin'])->group(function () {
     Route::get('/superadmin/dashboard', [SuperAdminController::class, 'dashboard'])->name('superadmin.dashboard');
