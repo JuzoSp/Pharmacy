@@ -23,9 +23,6 @@ use App\Http\Controllers\ProduitController;
 // });
 
 
-//Registration
-Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('/register', 'Auth\RegisterController@register');
 
 //SuperAdmin
 Route::middleware(['auth', 'superadmin'])->group(function () {
