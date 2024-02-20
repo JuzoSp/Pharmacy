@@ -15,8 +15,8 @@
     <div class="flex w-full h-[54px] justify-between items-center p-3 bg-blue-300">
         My App
         @if (Route::has('login'))
-            <a type="button" href="{{ route('login') }}"
-                class="bg-blue-500 shadow-sm text-white p-2 rounded-md">Login</a>
+            <a type="button" href="{{ route('login') }}" class="bg-blue-500 shadow-sm text-white p-2 rounded-md">Login
+            </a>
         @endif
     </div>
     <div class="flex">

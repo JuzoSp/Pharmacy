@@ -3,7 +3,7 @@
 
 <head>
     <title>Magasins</title>
-   @vite('resources/css/app.css') 
+    @vite('resources/css/app.css')
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <ul>
         @foreach ($magasins as $m)
             <li>{{ $m->nom }} - {{ $m->adresse }} - {{ $m->ville }} - {{ $m->code_postal }}</li>
-            <form method="POST" action="{{ route('m.destroy', ['id' => $m->id]) }}">
+            <form method="POST" action="{{ route('magasin.destroy', ['id' => $m->id]) }}">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="bg-red-500 text-white px-2 py-3 rounded">Supprimer</button>

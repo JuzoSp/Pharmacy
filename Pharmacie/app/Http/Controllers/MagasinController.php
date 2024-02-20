@@ -11,13 +11,13 @@ class MagasinController extends Controller
     public function index()
     {
         $magasins = Magasin::all();
-        return view('Magasin.index', ['magasins' => $magasins]);
+        return view('magasin.index', ['magasins' => $magasins]);
     }
 
     //Créer
     public function create()
     {
-        return view('Magasin.create');
+        return view('magasin.create');
     }
 
     //Enregistrer
@@ -30,7 +30,7 @@ class MagasinController extends Controller
         $magasin->code_postal = $request->input('code_postal');
         $magasin->save();
 
-        return redirect('/magasin')->with('success', 'Magasin ajouté avec succès');
+        return redirect('/magasins')->with('success', 'Magasin ajouté avec succès');
     }
 
     //Supprimer
@@ -39,6 +39,6 @@ class MagasinController extends Controller
         $magasin = Magasin::findOrFail($id);
         $magasin->delete();
 
-        return redirect('/magasin')->with('success', 'Magasin supprimé avec succès');
+        return redirect('/magasins')->with('success', 'Magasin supprimé avec succès');
     }
 }
